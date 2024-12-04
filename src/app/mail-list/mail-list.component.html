@@ -1,0 +1,34 @@
+<div>
+
+<p> My mail-list works!</p>
+<div class="row">
+<div class="col-lg-7">
+    <button class="btn btn-success" (click)="addEmail()">Add Email</button>
+<div class="email-table-container">
+<table class="email-table">
+    <tbody>
+        <tr *ngFor="let mail of  mails" (click)="showSelectedEmail(mail)">
+            <td>{{mail.subject}}</td>
+            <td>{{mail.body}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="col-lg-5">
+
+    <input type="text" class="form-control" [(ngModel)]="title" name="title">
+    <h1>{{title}}</h1>
+
+    <h1>{{selectedEmail.subject}}</h1>
+    <h4>{{selectedEmail.sender_name}} <small>{{selectedEmail.sender_email}}</small></h4>
+    <p>{{selectedEmail.body}}</p>
+</div>
+
+</div>
+<!-- <app-compose></app-compose> -->
+
+</div>
+
